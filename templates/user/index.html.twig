@@ -1,0 +1,532 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <span class="title my-5">Личный кабинет</span>
+            </div>
+        </div>
+
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <div class="alert alert-success text-center" role="alert">
+                    <span>Акция! При пополнении донат счета с <b>12.12.2015 до 12.01.2016</b> сумма вознаграждения увеличится в ДВОЕ!</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    <span><b>Внимание!</b> Позаботьтесь о безопасности своего аккаунта и привяжите E-mail.</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <div class="alert alert-danger text-center" role="alert">
+                    <span><b>Внимание!</b> У вашего аккаунта имеются предупреждения!</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <div class="alert alert-danger text-center" role="alert">
+                    <span><b>Внимание!</b> Ваш аккаунт заблокирован до --- года. Причина блокировки: ---</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2 text-center">
+                                <div class="ucp-donate-item">
+                                    <div class="ucp-donate-icon convert"></div>
+                                    <p>Конвертировать рубли в игровую валюту</p>
+                                    <p class="ucp-donate-desc">1 руб = 1200$</p>
+                                    <div class="ucp-donate-hover">
+                                        <a href="javascript:void(0);" class="button button-small ucp-donate-btn" data-toggle="modal" data-target="#myConvert">Использовать</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 text-center">
+                                <div class="ucp-donate-item">
+                                    <div class="ucp-donate-icon warnoff"></div>
+                                    <p>Снять один варн</p>
+                                    <p class="ucp-donate-desc">50 руб</p>
+                                    <div class="ucp-donate-hover">
+                                        <a href="javascript:void(0);" class="button button-small ucp-donate-btn">Использовать</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 text-center">
+                                <div class="ucp-donate-item">
+                                    <div class="ucp-donate-icon changename"></div>
+                                    <p>Смена игрового RP имени</p>
+                                    <p class="ucp-donate-desc">120 руб</p>
+                                    <div class="ucp-donate-hover">
+                                        <a href="javascript:void(0);" class="button button-small ucp-donate-btn" data-toggle="modal" data-target="#myNick">Использовать</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 text-center">
+                                <div class="ucp-donate-item">
+                                    <div class="ucp-donate-icon police"></div>
+                                    <p>Увеличить законопослушность</p>
+                                    <p class="ucp-donate-desc">10 руб = +10ед</p>
+                                    <div class="ucp-donate-hover">
+                                        <a href="javascript:void(0);" class="button button-small ucp-donate-btn">Использовать</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 text-center">
+                                <div class="ucp-donate-item">
+                                    <div class="ucp-donate-icon fractionoff"></div>
+                                    <p>Самостоятельно уволится из фракции</p>
+                                    <p class="ucp-donate-desc">5 руб</p>
+                                    <div class="ucp-donate-hover">
+                                        <a href="javascript:void(0);" class="button button-small ucp-donate-btn" data-toggle="modal" data-target="#myConfirm">Использовать</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 text-center">
+                                <div class="ucp-donate-item">
+                                    <div class="ucp-donate-icon numberfour"></div>
+                                    <p>Покупка 4-х значного телефонного номера</p>
+                                    <p class="ucp-donate-desc">60 руб</p>
+                                    <div class="ucp-donate-hover">
+                                        <a href="javascript:void(0);" class="button button-small ucp-donate-btn" data-toggle="modal" data-target="#myNum">Использовать</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body" style="height: 210px;">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="text-center">
+                                    <img src="{{ asset('img/skins/288.png') }}" alt="Аватар пользователя" class="d-inline-block mb-4">
+                                    <a href="{{ path('logoutPage') }}" class="button button-small d-block">
+                                        Выход
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <span class="title-mini text-left">{{ user.name }}</span>
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <span class="d-block text-muted">Во фракции: LVPD</span>
+                                        <span class="d-block text-muted mt-2">Всего онлайн: {{ user.online }} ч.</span>
+                                        <span class="d-block text-muted mt-2">На донат счету: {{ user.donate|number_format(0, '.', ' ') }} руб.</span>
+                                        <span class="d-block text-muted mt-2">Последний вход: -</span>
+                                        <span class="d-block text-muted mt-2">Дата регистрации: {{ user.datareg }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body" style="height: 210px;">
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/pistol.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/deagle.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/uzi.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/ak47.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/rifle.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between mt-3">
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/SDpistol.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/shotgun.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/mp5.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                            <div class="gun-skill-item">
+                                <img src="{{ asset('img/guns/m4a1.png') }}" alt="pistol">
+                                <div class="gun-skill-procent">
+                                    10%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body" style="height: 140px">
+                        <div class="d-flex flex-wrap justify-content-between mb-4">
+                            <a href="javascript:void(0);" class="button button-small">
+                                Сменить пароль
+                            </a>
+                            <a href="javascript:void(0);" class="button button-small">
+                                Установить привязку по IP
+                            </a>
+                            <a href="javascript:void(0);" class="button button-small">
+                                Google Authenticator
+                            </a>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <a href="javascript:void(0);" class="button button-small">
+                                Сменить E-mail
+                            </a>
+                            <a href="javascript:void(0);" class="button button-small">
+                                Привязать телефон
+                            </a>
+                            <a href="javascript:void(0);" class="button button-small">
+                                Установить секретный код
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body" style="height: 140px">
+                        <div class="row">
+                            <div class="col-3">
+                                <span class="mr-2">Здоровье:</span>
+                            </div>
+                            <div class="col-9">
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.heal }}%;">
+                                        {{ user.heal }}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <span class="mr-2">Броня:</span>
+                            </div>
+                            <div class="col-9">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.armor }}%;">
+                                        {{ user.armor }}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <span class="mr-2">Сытость:</span>
+                            </div>
+                            <div class="col-9">
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.hungry }}%;">
+                                        {{ user.hungry }}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <span class="mr-2">Жажда:</span>
+                            </div>
+                            <div class="col-9">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: {{ user.thirsty }}%;">
+                                        {{ user.thirsty }}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <table class="striped">
+                                    <tr>
+                                        <td><span>Пол</span></td>
+                                        <td>
+                                            {% if user.sex == true %}
+                                                <span>Мужской</span>
+                                            {% else %}
+                                                <span>Женский</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Уровень</span></td>
+                                        <td><span>{{ user.level }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Очки опыта</span></td>
+                                        <td><span>{{ user.exp }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Номер аккаунта</span></td>
+                                        <td><span>{{ user.id }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Предупреждения</span></td>
+                                        <td>
+                                            {% if user.warn == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.warn }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Дата регистрации</span></td>
+                                        <td><span>{{ user.datareg }}</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="striped">
+                                    <tr>
+                                        <td><span>Металл</span></td>
+                                        <td>
+                                            {% if user.mats == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.mats }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Арестов</span></td>
+                                        <td>
+                                            {% if user.arrests == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.arrests }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Патроны</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Наркотики</span></td>
+                                        <td>
+                                            {% if user.drugs == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.drugs }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Уровень розыска</span></td>
+                                        <td>
+                                            {% if user.wanted == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.wanted }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Законопослушность</span></td>
+                                        <td><span>{{ user.	obedience }}</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <table class="striped">
+                                    <tr>
+                                        <td><span>Бизнес</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Автомобиль</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Проживание</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="striped">
+                                    <tr>
+                                        <td><span>Должность</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Организация</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Номер телефона</span></td>
+                                        <td>
+                                            {% if user.phonenumber == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.phonenumber }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <table class="striped">
+                                    <tr>
+                                        <td><span>Всего доната</span></td>
+                                        <td>
+                                            {% if user.donateall == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.donateall }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Основной счет</span></td>
+                                        <td>
+                                            {% if user.bank == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.bank }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>На донат счету</span></td>
+                                        <td>
+                                            {% if user.donate == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.donate }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Наличные деньги</span></td>
+                                        <td>
+                                            {% if user.cash == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.cash }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>На счету телефона</span></td>
+                                        <td>
+                                            {% if user.phonemoney == 0 %}
+                                                <span>Нет</span>
+                                            {% else %}
+                                                <span>{{ user.phonemoney }}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="striped">
+                                    <tr>
+                                        <td><span>Водительские права</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Лицензия на бизнес</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Лицензия на оружие</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Лицензия на водный транспорт</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Лицензия на воздушный транспорт</span></td>
+                                        <td><span>-</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal %}
+
+{% endblock %}

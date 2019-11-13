@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Fusion Role Play - игровой проект в популярной многопользовательской игре GTA San Andreas Multiplayer (SAMP). Окунувшись в игровой процесс нашего сервера, Вам станут доступны огромное количество разнообразных функций. На проекте Вы можете стать кем угодно, от бандита до полицейского, от простого рабочего до президента штата, от мафиози до сотрудника секретной службы.">
+        <meta name="keywords" content="samp, gta, san andreas, multiplayer, самп, мультиплеер, гта, сан андреас, скачивать самп, gta san, сервер самп">
+        <meta name="author" content="fusion-brains.ru">
+        <meta name="designer" content="fusion-brains.ru">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/ico/apple-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/ico/apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/ico/apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/ico/apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/ico/apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/ico/apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/ico/apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/ico/apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/ico/apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/ico/android-icon-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/ico/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/ico/favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/ico/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('img/ico/manifest.json') }}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{ asset('img/ico/ms-icon-144x144.png') }}">
+        <meta name="theme-color" content="#ffffff">
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('build/css/main.css') }}">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="container">
+                <div class="row wow fadeInDown">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <img src="{{ asset('img/logo.png') }}" alt="Fusion" class="img-fluid cursor" onclick="location.href='{{ path('mainPage') }}'"/>
+                            <nav class="nav justify-content-center">
+                                <a class="nav-link text-link" href="{{ path('mainPage') }}">Главная</a>
+                                <a class="nav-link text-link" href="{{ path('donatePage') }}">Пополнение счёта</a>
+                                <a class="nav-link text-link" href="https://samp.fusion-rp.ru/forum">Форум</a>
+                            </nav>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="{{ path('userPage') }}" class="link mr-4">
+                                        {{ app.user.name }}
+                                    </a>
+                                    <a href="{{ path('logoutPage') }}" class="button">
+                                        Выход
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="d-flex align-items-center">
+                                    <a href='javascript:void(0);' class='button' data-toggle='modal' data-target='#LoginModal'>Панель управления</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% block body %}{% endblock %}
+
+        <footer>
+            <div class="container">
+                <div class="row wow fadeInUp">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <img src="{{ asset('img/logo.png') }}" alt="Fusion" class="img-fluid cursor" onclick="location.href='{{ path('mainPage') }}'"/>
+                            <nav class="nav justify-content-center">
+                                <a class="nav-link text-link text-link-small" href="{{ path('mainPage') }}">Главная</a>
+                                <a class="nav-link text-link text-link-small" href="{{ path('donatePage') }}">Пополнение счёта</a>
+                                <a class="nav-link text-link text-link-small" href="javascript:void(0);">Сообщить об ошибке</a>
+                            </nav>
+                            <div class="social-icons">
+                                <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                                <script src="//yastatic.net/share2/share.js"></script>
+                                <div class="ya-share2" data-services="vkontakte,facebook,twitter,whatsapp,skype,telegram"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {{ render(controller('App\\Controller\\SecurityController:loginShowAction')) }}
+
+        {% block modal %}
+        {% endblock %}
+
+        <script src="{{ asset('build/js/main.js') }}"></script>
+
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>
