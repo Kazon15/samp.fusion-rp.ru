@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form class="modal-content my-5" action="{{ path("loginPage") }}" method="post" id="userLoginForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="LoginModalLabel">Авторизация</h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <div class="form-group">
+                            <label for="_name" class="d-block text-left">Логин:</label>
+                            <input type="text" class="input w-100" id="_name" name="name" placeholder="Никнэйм"
+                                   required="required" autocomplete="name" value="{{ last_username }}"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="_password">Пароль:</label>
+                                <a href="javascript:void(0);" id="resetPassword" class="form-text text-muted text-right small
+                                    font-italic" data-toggle="modal" data-target="#resetPass">Забыли пароль?</a>
+                            </div>
+                            <input type="password" class="input w-100" id="_password" name="password"
+                                   placeholder="Введите пароль" required="required" autocomplete="current-password"/>
+                        </div>
+                        <div class="form-group mb-0">
+                            <label for="secretkey" class="d-block text-left">Секретный код:</label>
+                            <input type="number" class="input w-100" id="secretkey" name="_secretkey" placeholder="Секретный код (если есть)" min="0" max="9999"/>
+                            <div class="custom-control custom-checkbox mt-3">
+                                <input type="checkbox" class="custom-control-input" id="remember_me"
+                                       name="_remember_me" value="on" checked/>
+                                <label class="custom-control-label form-text text-muted small font-italic text-left" for="remember_me">Запомнить меня?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="button" id="_submit" name="_submit">Войти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

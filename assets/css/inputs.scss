@@ -1,0 +1,37 @@
+.input {
+  height: 50px;
+  width: 300px;
+  outline: none;
+  display: block;
+  padding: 0 10px;
+  border-radius: 2px;
+  color: #ffffff !important;
+  background-color: rgba(19, 19, 19, 1);
+  border: 1px solid rgb(55, 55, 55) !important;
+}
+
+.custom-checkbox {
+  .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+  }
+
+  .custom-control-label {
+    line-height: initial;
+
+    &::before, &::after {
+      top: 0;
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+::-moz-placeholder {
+  color: #ffffff;
+}
+
+:-ms-input-placeholder {
+  color: #ffffff;
+}

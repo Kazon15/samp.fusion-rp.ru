@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&subset=cyrillic');
+@import "~normalize.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~animate.css/animate.css";
+@import "buttons";
+@import "inputs";
+
+@font-face {
+  font-family: icomoon;
+  src: url('../../public/fonts/icomoon.ttf');
+}
+
+body {
+  color: #ffffff;
+  font: 14px "Roboto", sans-serif;
+  background-color: rgba(19, 19, 19, 1);
+}
+
+header {
+  background-color: rgb(32, 32, 32);
+  border-bottom: 1px solid rgb(55, 55, 55);
+
+  .row {
+    min-height: 70px;
+    align-items: center;
+  }
+}
+
+footer {
+  background-color: rgb(32, 32, 32);
+  border-top: 1px solid rgb(55, 55, 55);
+
+  .row {
+    min-height: 70px;
+    align-items: center;
+  }
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.text-link {
+  color: #ffffff;
+  font-weight: 600;
+  transition: all .4s ease;
+  text-transform: uppercase;
+
+  &.text-link-small {
+    font-size: 12px;
+  }
+
+  &:hover {
+    color: #ff5757;
+    transform: scale(1.1);
+    transition: all .4s ease;
+  }
+}
+
+.slide {
+  height: 400px;
+  background-size: contain !important;
+
+  &.slide-cover {
+    background-size: cover !important;
+  }
+}
+
+.muted {
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.border-top {
+  border-top: 1px solid rgb(55, 55, 55) !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(55, 55, 55) !important;
+}
+
+.number {
+  font-family: "icomoon", sans-serif;
+  font-size: 40px;
+  color: #6c757d;
+}
+
+.fast-login {
+  border-top: 1px solid rgb(55, 55, 55);
+  border-bottom: 1px solid rgb(55, 55, 55);
+  background-color: rgb(32, 32, 32);
+}
+
+.social-item {
+  height: 210px;
+  display: grid;
+  cursor: pointer;
+  border-radius: 5px;
+  align-content: center;
+  transition: all .4s ease;
+  border: 1px solid rgb(55, 55, 55);
+  background-color: rgb(32, 32, 32);
+
+  .social-ico {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    display: block;
+  }
+
+  .social-text {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .users {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+
+    span {
+      color: #7c949d;
+      margin-left: 5px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all .4s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+  }
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.title {
+  display: block;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title-small {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title-mini {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sidebar {
+  height: 40px;
+  color: #ffffff;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 60px;
+  text-decoration: none;
+  transition: all .4s ease;
+
+  &:hover {
+    color: #ff5757;
+    text-decoration: none;
+  }
+}
+
+.link {
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .4s ease;
+
+  &:hover {
+    color: #ff5757;
+    text-decoration: none;
+  }
+}
+
+.instruction {
+  background: url("../../public/img/donate/instruction.png") no-repeat 10px 3px;
+
+  &:hover {
+    background: url("../../public/img/donate/instructionhover.png") no-repeat 5px 3px;
+  }
+}
+
+.confirm {
+  background: url("../../public/img/donate/confirm.png") no-repeat 10px 3px;
+
+  &:hover {
+    background: url("../../public/img/donate/confirmhover.png") no-repeat 5px 3px;
+  }
+}
+
+.services {
+  background: url("../../public/img/donate/services.png") no-repeat 5px 0;
+
+  &:hover {
+    background: url("../../public/img/donate/serviceshover.png") no-repeat 0 0;
+  }
+}
+
+.question {
+  background: url("../../public/img/donate/faq.png") no-repeat 10px 3px;
+
+  &:hover {
+    background: url("../../public/img/donate/faqhover.png") no-repeat 5px 3px;
+  }
+}
+
+.forum {
+  background: url("../../public/img/donate/forum.png") no-repeat 10px 3px;
+
+  &:hover {
+    background: url("../../public/img/donate/forumhover.png") no-repeat 5px 3px;
+  }
+}
+
+.accept-text {
+  p {
+    font-size: 12px;
+    color: #9fa7aa;
+  }
+
+  span {
+    font-weight: 600;
+    color: #ff5757;
+  }
+}
+
+.gun-skill-item {
+  width: 90px;
+  height: 75px;
+  text-align: center;
+}
+
+.gun-skill-procent {
+  left: 18px;
+  width: 50px;
+  color: #fff;
+  height: 20px;
+  bottom: -5px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  position: relative;
+  border-radius: 3px;
+  background: #1966b5;
+}
+
+table.striped {
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .4px;
+
+  tr:first-child {
+    td {
+      padding-top: 0;
+    }
+  }
+
+  tr {
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-image: url("../../public/img/ucp/dot.png");
+
+    td {
+      width: 100%;
+      text-align: left;
+      line-height: 10px;
+      padding-top: 15px;
+
+      span {
+        padding-bottom: 5px;
+        display: inline-block;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.ucp-donate-item {
+  p {
+    color: #6c757d;
+    margin-top: 5px;
+
+    &.ucp-donate-desc {
+      color: #6c757d;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+  }
+
+  .ucp-donate-icon {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 99px;
+
+    &.convert {
+      background: #eff3f6 url("../../public/img/donate/convert.png") no-repeat center;
+    }
+
+    &.warnoff {
+      background: #eff3f6 url("../../public/img/donate/warnoff.png") no-repeat center;
+    }
+
+    &.changename {
+      background: #eff3f6 url("../../public/img/donate/changename.png") no-repeat center;
+    }
+
+    &.police {
+      background: #eff3f6 url("../../public/img/donate/police.png") no-repeat center;
+    }
+
+    &.fractionoff {
+      background: #eff3f6 url("../../public/img/donate/fractionoff.png") no-repeat center;
+    }
+
+    &.numberfour {
+      background: #eff3f6 url("../../public/img/donate/numberfour.png") no-repeat center;
+    }
+
+    &.carnumber {
+      background: #eff3f6 url("../../public/img/donate/car-number-icon.png") no-repeat center;
+    }
+
+    &.gunskills {
+      background: #eff3f6 url("../../public/img/donate/skills-icon.png") no-repeat center;
+    }
+
+    &.alllicenses {
+      background: #eff3f6 url("../../public/img/donate/all-licenses.png") no-repeat center;
+    }
+
+    &.editage {
+      background: #eff3f6 url("../../public/img/donate/edit-age.png") no-repeat center;
+    }
+  }
+
+  .ucp-donate-hover {
+    top: 0;
+    opacity: 0;
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    transition: all .4s ease;
+    background: rgba(32, 32, 32, 0.86);
+  }
+
+  .ucp-donate-btn {
+    top: 45%;
+    left: 10%;
+    position: absolute;
+  }
+
+  &:hover {
+    .ucp-donate-hover {
+      opacity: 1;
+      transition: all .4s ease;
+    }
+  }
+}
+
+.card {
+  background-color: rgb(32, 32, 32);
+  border: 1px solid rgb(55, 55, 55);
+}
+
+.modal-content {
+  background-color: rgb(32, 32, 32);
+
+  .close {
+    color: #ffffff;
+
+    &:hover {
+      color: #ffffff !important;
+    }
+  }
+
+  .modal-header {
+    border-bottom: 1px solid rgb(55, 55, 55);
+  }
+
+  .modal-footer {
+    border-top: 1px solid rgb(55, 55, 55);
+  }
+}
+
+.progress {
+  background-color: rgba(19, 19, 19, 1);
+}
