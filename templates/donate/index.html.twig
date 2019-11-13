@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Донат услуги{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <span class="title my-5">Пополнение счета игрового аккаунта</span>
+            </div>
+        </div>
+        <div class="row wow zoomIn" style="display: none;">
+            <div class="col-12">
+                <div class="alert alert-success text-center" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span>Акция! При пополнении донат счета с <b>15 июля 2016</b> до <b>17 июля 2016</b> сумма
+                      вознаграждения увеличится в <b>ДВОЕ</b>!</span>
+                </div>
+            </div>
+        </div>
+        <div class="row wow zoomIn">
+            <div class="col-12">
+                <div class="alert alert-danger text-center" role="alert">
+                    <span><b>Внимание!</b> Донат магазин временно недоступен. Проводятся технические работы.</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            </div>
+        </div>
+        <div class="row wow zoomIn" style="display: none;">
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span>Внимание! Сохраняйте скрин-шот чека после оплаты.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body p-5 m-auto">
+                        <form>
+                            <input type="text" name="account" class="input mb-4" placeholder="Ник или номер аккаунта">
+                            <input type="number" name="sum" class="input mb-4" placeholder="Сумма пополнения">
+                            <input class="input button" type="submit" value="Оплатить">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body p-5 m-auto">
+                        <span class="title-mini mb-4">Акции</span>
+                        <p>В данный момент нет активных акций.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body p-5 m-auto">
+                        <div class="text-center mb-4">
+                            <img src="{{ asset('img/donate/accept.png') }}" alt="accept"/>
+                        </div>
+                        <span class="title-mini">Баланс вашего аккаунта успешно пополнен!</span>
+                        <div class="accept-text text-center pt-5 px-5">
+                            <p>Для того что бы воспользоваться своими деньгами войдите в меню Услуг.</p>
+
+                            <p>Для этого введите <span>/mn > Услуги</span></p>
+
+                            <p>Либо войдите в <span>Панель управления</span> своим аккаунтом и
+                               выберите из предложенных вариантов нужный.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body p-5 m-auto">
+                        <div class="text-center mb-4">
+                            <img src="{{ asset('img/donate/dont.png') }}" alt="dont">
+                        </div>
+                        <span class="title-mini">Произошла ошибка при пополнении счета</span>
+                        <div class="accept-text text-center pt-5 px-5">
+                            <p>Не удалось пополнить счет аккаунта.</p>
+
+                            <p>Попробуйте повторить пополнение через несколько минут.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card mb-4 wow zoomIn">
+                    <div class="card-body p-5 m-auto">
+                        <span class="title-small mb-4">Информация</span>
+                        <a href="javascript:void(0);" class="sidebar instruction mb-4">Инструкция по пополнению игрового аккаунта</a>
+                        <a href="javascript:void(0);" class="sidebar confirm mb-4">Пользовательское <br> соглашение</a>
+                        <a href="javascript:void(0);" class="sidebar services mb-5">Предоставляемы услуги</a>
+
+                        <span class="title-small mb-4">Техническая поддержка</span>
+                        <a href="javascript:void(0);" class="sidebar question mb-4">Вопрос - Ответ</a>
+                        <a href="javascript:void(0);" class="sidebar forum">Форум</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

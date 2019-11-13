@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Главная Fusion Role Play | GTA San Andreas Online (SAMP){% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-0 wow zoomIn mt-2">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="slide slide-cover" style="background: url('{{ asset('img/header-banner.png') }}') no-repeat center;"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide" style="background: url('{{ asset('img/random/1.png') }}') no-repeat center;"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide" style="background: url('{{ asset('img/random/2.png') }}') no-repeat center;"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide" style="background: url('{{ asset('img/random/3.png') }}') no-repeat center;"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide" style="background: url('{{ asset('img/random/4.png') }}') no-repeat center;"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide" style="background: url('{{ asset('img/random/5.png') }}') no-repeat center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid fast-login p-0 mt-2">
+        <div class="container">
+            <div class="row text-center mt-3">
+                <div class="col-4 wow fadeInLeft">
+                    <span class="muted">Игроков</span>
+                </div>
+                <div class="col-4 wow zoomIn">
+                    <span class="muted">Рекорд</span>
+                </div>
+                <div class="col-4 wow fadeInRight">
+                    <span class="muted">Быстрый вход</span>
+                </div>
+            </div>
+            <div class="row text-center align-items-center my-2">
+                <div class="col-4 wow fadeInLeft">
+                    <span class="muted number">0</span>
+                </div>
+                <div class="col-4 wow zoomIn">
+                    <span class="muted number">0</span>
+                </div>
+                <div class="col-4 wow fadeInRight">
+                    <a href='javascript:void(0);' class='button' data-toggle='modal' data-target='#myModal'>Подключиться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-12 wow zoomIn">
+                <h3 class="text-center">Мы в интернете</h3>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-3">
+                <div class="social-item wow flipInY" onclick="window.open('https://vk.com/fusion_rp');">
+                    <img src="{{ asset('img/social-ico/vk.png') }}" alt="vk" class="social-ico">
+                    <span class="social-text">Вконтакте</span>
+                    <div class="users">
+                        <img src="{{ asset('img/social-ico/user.png') }}" alt="users">
+                        <span id="vk_count">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="social-item wow flipInY" onclick="window.open('https://www.youtube.com/user/fusiontvful');">
+                    <img src="{{ asset('img/social-ico/youtube.png') }}" alt="youtube" class="social-ico">
+                    <span class="social-text">YouTube</span>
+                    <div class="users">
+                        <img src="{{ asset('img/social-ico/user.png') }}" alt="users">
+                        <span id="youtube_count">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="social-item wow flipInY" onclick="window.open('https://www.twitch.tv/fusion_rp');">
+                    <img src="{{ asset('img/social-ico/twitch.png') }}" alt="twitch" class="social-ico">
+                    <span class="social-text">Twitch</span>
+                    <div class="users">
+                        <img src="{{ asset('img/social-ico/user.png') }}" alt="users">
+                        <span id="twitch_count">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="social-item wow flipInY" onclick="window.open('https://www.instagram.com/fusionrp');">
+                    <img src="{{ asset('img/social-ico/inst.png') }}" alt="instagram" class="social-ico">
+                    <span class="social-text">Instagram</span>
+                    <div class="users">
+                        <img src="{{ asset('img/social-ico/user.png') }}" alt="users">
+                        <span id="inst_count">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

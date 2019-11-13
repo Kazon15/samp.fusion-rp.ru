@@ -1,0 +1,101 @@
+.button {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 22px;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  background-color: rgba(19, 19, 19, 1);
+  transition: all .4s ease !important;
+  border: 1px solid rgb(55, 55, 55) !important;
+
+  &.button-small {
+    padding: 10px 15px;
+    text-transform: none;
+  }
+
+  &:hover {
+    background: #ff5757;
+    border-color: #ff5757;
+    text-decoration: none;
+    color: #fff !important;
+    transition: all .4s ease !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.close {
+  opacity: .2;
+  font-size: 21px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ya-share2__badge {
+  padding: 8px;
+  color: #597da3;
+  transition: all .4s ease;
+  font-size: 20px !important;
+  border-radius: 30px !important;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all .4s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+  }
+}
+
+.ya-share2__item_service_vkontakte .ya-share2__badge {
+  background-color: rgba(72, 114, 158, 0.2) !important;
+
+  &:hover {
+    background-color: #48729E !important;
+  }
+}
+
+.ya-share2__item_service_facebook .ya-share2__badge {
+  background-color: rgba(79, 105, 162, 0.2) !important;
+
+  &:hover {
+    background-color: #3B5998 !important;
+  }
+}
+
+.ya-share2__item_service_twitter .ya-share2__badge {
+  background-color: rgba(0, 172, 237, 0.2) !important;
+
+  &:hover {
+    background-color: #00ACED !important;
+  }
+}
+
+.ya-share2__item_service_whatsapp .ya-share2__badge {
+  background-color: rgba(101, 188, 84, 0.2) !important;
+
+  &:hover {
+    background-color: #65BC54 !important;
+  }
+}
+
+.ya-share2__item_service_skype .ya-share2__badge {
+  background-color: rgba(0, 175, 240, 0.2) !important;
+
+  &:hover {
+    background-color: #00AFF0 !important;
+  }
+}
+
+.ya-share2__item_service_telegram .ya-share2__badge {
+  background-color: rgba(100, 169, 220, 0.2) !important;
+
+  &:hover {
+    background-color: #64A9DC !important;
+  }
+}
